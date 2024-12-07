@@ -130,14 +130,6 @@
     }
 
     @media (max-width: 600px) {
-      nav ul {
-        flex-direction: row;
-      }
-
-      nav ul li {
-        margin: 8px 0;
-      }
-
       .search-container input, .search-container button {
         width: 90%;
       }
@@ -177,19 +169,19 @@
         </thead>
         <tbody id="weedTable">
           <tr>
-            <td>Vatshola</td>
-            <td><a href="https://www.weedherb-bau.com/weed/OQ=="><i>Aeschynomene aspera</i> L.</a></td>
-            <td>Fabaceae</td>
+            <td><span>Vatshola</span></td>
+            <td><span><a href="https://www.weedherb-bau.com/weed/OQ=="><i>Aeschynomene aspera</i> L.</a></span></td>
+            <td><span>Fabaceae</span></td>
           </tr>
           <tr>
-            <td>Wedelia</td>
-            <td><a href="https://www.weedherb-bau.com/weed/MjY="><i>Sphagneticola trilobata</i> (L.) Pruski</a></td>
-            <td>Asteraceae</td>
+            <td><span>Wedelia</span></td>
+            <td><span><a href="https://www.weedherb-bau.com/weed/MjY="><i>Sphagneticola trilobata</i> (L.) Pruski</a></span></td>
+            <td><span>Asteraceae</span></td>
           </tr>
           <tr>
-            <td>White Sweetclover</td>
-            <td><a href="https://www.weedherb-bau.com/weed/Mzc="><i>Melilotus albus</i> Medik.</a></td>
-            <td>Leguminosae</td>
+            <td><span>White Sweetclover</span></td>
+            <td><span><a href="https://www.weedherb-bau.com/weed/Mzc="><i>Melilotus albus</i> Medik.</a></span></td>
+            <td><span>Leguminosae</span></td>
           </tr>
         </tbody>
       </table>
@@ -203,7 +195,7 @@
       const rows = document.querySelectorAll("#weedTable tr");
 
       rows.forEach(row => {
-        const cells = row.querySelectorAll("td");
+        const cells = row.querySelectorAll("td span");
         let rowContainsSearchTerm = false;
 
         cells.forEach(cell => {
