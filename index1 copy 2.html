@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5px;
+    }
+
+    h1 {
+      font-size: 1px 0;
+      font-weight: bold;
+      margin-bottom: 24px;
+      text-align: center;
+      color: #1E40AF;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+
+    nav ul li {
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      background-color: #1E40AF;
+      color: white;
+      border-radius: 8px;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      background-color: #1c3d9a;
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .search-container input {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 8px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 8px;
+    }
+
+    .search-container button {
+      background-color: #1E40AF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .search-container button:hover {
+      background-color: #1c3d9a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    table, th, td {
+      border: 1px solid #d1d5db;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 16px;
+      background-color: #e5e7eb;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: 'Bai Jamjuree', sans-serif;
+    }
+
+    footer a {
+      color: #1E40AF;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weed Herbarium</h1>
+  </header>
+  <nav>
+      <ul>
+          <li>
+              <a href="/index1 copy.html">Home</a>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="/contact.html">Contact</a>
+          </li>
+      </ul>
+  </nav>
+    <div class="search-container">
+      <input id="searchInput" type="text" placeholder="Search here">
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Local Name</th>
+            <th>Scientific Name</th>
+            <th>Family Name</th>
+          </tr>
+        </thead>
+        <tbody id="weedTable">
+          <tr>
+            <td>Angta</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTQ="><i>Panicum repens</i> L.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Arail</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjA="><i>Leersia hexandra</i> Sw.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Bara dudhia</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzQ="><i>Euphorbia hirta</i> L.</a></td>
+            <td>Euphorbiaceae</td>
+          </tr>
+                      <tr>
+            <td>Bathua</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjE="><i>Chenopodium album</i> L.</a></td>
+            <td>Chenopodiaceae</td>
+          </tr>
+                      <tr>
+            <td>Bishkatali</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTA="><i>Polygonum hydropiper</i> L.</a></td>
+            <td>Polygonaceae</td>
+          </tr>
+                      <tr>
+            <td>Bon Dhonya</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mjc="><i>Scoparia dulcis</i> L.</a></td>
+            <td>Plantaginaceae</td>
+          </tr>
+                      <tr>
+            <td>Bon Masur</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzM="><i>Vicia hirsuta</i> (L.) Gray</a></td>
+            <td>Leguminosae</td>
+          </tr>
+                      <tr>
+            <td>Boronukha</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzE="><i>Monochoria hastata</i> (L.) Solms-Laub.</a></td>
+            <td>Pontederiaceae</td>
+          </tr>
+                      <tr>
+            <td>Doorba</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NA=="><i>Cynodon dactylon</i> (L.) Pers.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Foska begun</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzA="><i>Physalis minima</i> L.</a></td>
+            <td>Solanaceae</td>
+          </tr>
+                      <tr>
+            <td>Gagrakata</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDM="><i>Xanthium strumarium</i> L.</a></td>
+            <td>Asteraceae</td>
+          </tr>
+                      <tr>
+            <td>Gang palong</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDA="><i>Rumex maritimus</i> L.</a></td>
+            <td>Polygonaceae</td>
+          </tr>
+                      <tr>
+            <td>Guccha mutha</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTM="><i>Cyperus nemoralis</i> Cherm.</a></td>
+            <td>Cyperaceae</td>
+          </tr>
+                      <tr>
+            <td>Hazardana</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTU="><i>Phyllanthus niruri</i> L.</a></td>
+            <td>Euphorbiaceae</td>
+          </tr>
+                      <tr>
+            <td>Job&#039;s Tears</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjM="><i>Coix lacryma-jobi</i> L.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Joina</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjQ="><i>Fimbristylis miliacea</i> L.</a></td>
+            <td>Cyperaceae</td>
+          </tr>
+                      <tr>
+            <td>Kanaibashi</td>
+            <td><a href="https://www.weedherb-bau.com/weed/OA=="><i>Commelina benghalensis</i> L.</a></td>
+            <td>Commelinaceae</td>
+          </tr>
+                      <tr>
+            <td>Kata notey</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Ng=="><i>Amaranthus spinosus</i> L.</a></td>
+            <td>Amaranthaceae</td>
+          </tr>
+                      <tr>
+            <td>Khet Papri</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjU="><i>Oldenlandia corymbosa</i> L.</a></td>
+            <td>Rubiaceae</td>
+          </tr>
+                      <tr>
+            <td>Khude Shama</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTI="><i>Echinochloa colonum</i> (L.) Link</a></td>
+            <td>Gramineae</td>
+          </tr>
+          <tr>
+            <td>Lojjapoti</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDE="><i>Mimosa pudica</i> L.</a></td>
+            <td>Leguminosae</td>
+          </tr>
+                      <tr>
+            <td>Masur Chana</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzU="><i>Vicia sativa</i> L.</a></td>
+            <td>Leguminosae</td>
+          </tr>
+                      <tr>
+            <td>Mati Chaise</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTc="><i>Fimbristylis diphylla</i> (Retz.) Vahl.</a></td>
+            <td>Cyperaceae</td>
+          </tr>
+                      <tr>
+            <td>Mikania Lata</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDI="><i>Mikania micrantha</i> Kunth.</a></td>
+            <td>Compositae</td>
+          </tr>
+                      <tr>
+            <td>Morcha agra</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTg="><i>Croton bonplandianus</i> Baill.</a></td>
+            <td>Euphorbiaceae</td>
+          </tr>
+                      <tr>
+            <td>Motka</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDU="><i>Stellaria media</i> (L.) Villars</a></td>
+            <td>Caryophyllaceae</td>
+          </tr>
+                      <tr>
+            <td>Mutha</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTE="><i>Cyperus rotundus</i> L.</a></td>
+            <td>Cyperaceae</td>
+          </tr>
+                      <tr>
+            <td>Nunia</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzY="><i>Portulaca oleracea</i> L.</a></td>
+            <td>Portulacaceae</td>
+          </tr>
+                      <tr>
+            <td>Pani Long</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MzI="><i>Ludwigia hyssopifolia</i> (G.Don) Exell</a></td>
+            <td>Onagraceae</td>
+          </tr>
+                      <tr>
+            <td>Pani-kula</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTk="><i>Pogostemon auricularis</i> (L.) El-Gazzar &amp; L. Watson</a></td>
+            <td>Lamiaceae</td>
+          </tr>
+                      <tr>
+            <td>Parthenium</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjI="><i>Parthenium hysterophorus</i> L.</a></td>
+            <td>Asteraceae</td>
+          </tr>
+                      <tr>
+            <td>Raktadrone</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mjg="><i>Leonurus sibiricus</i> L.</a></td>
+            <td>Lamiaceae</td>
+          </tr>
+                      <tr>
+            <td>Setlumi</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mzg="><i>Gnaphalium luteo-album</i> L.</a></td>
+            <td>Compositae</td>
+          </tr>
+                      <tr>
+            <td>Setodrone</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Nw=="><i>Leucas aspera</i> (Willd.) Link</a></td>
+            <td>Lamiaceae</td>
+          </tr>
+                      <tr>
+            <td>Shak notey</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NQ=="><i>Amaranthus viridis</i> L.</a></td>
+            <td>Amaranthaceae</td>
+          </tr>
+                      <tr>
+            <td>Shama</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MQ=="><i>Echinochloa crus-galli</i> (L.) P. Beauv.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Shiyalleja</td>
+            <td><a href="https://www.weedherb-bau.com/weed/NDQ="><i>Setaria viridis</i> (L.) P.Beauv.</a></td>
+            <td>Gramineae</td>
+          </tr>
+                      <tr>
+            <td>Siyalmutra</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mzk="><i>Blumea lacera</i> (Burm.f.) DC.</a></td>
+            <td>Compositae</td>
+          </tr>
+                      <tr>
+            <td>Tripatri sak</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MTY="><i>Desmodium triflorum</i> (L.) DC.</a></td>
+            <td>Leguminosae</td>
+          </tr>
+                      <tr>
+            <td>Tukma</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mjk="><i>Hyptis suaveolens</i> (L.) Poit</a></td>
+            <td>Lamiaceae</td>
+          </tr>
+          <tr>
+            <td>Vatshola</td>
+            <td><a href="https://www.weedherb-bau.com/weed/OQ=="><i>Aeschynomene aspera</i> L.</a></td>
+            <td>Fabaceae</td>
+          </tr>
+                      <tr>
+            <td>Wedelia</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjY="><i>Sphagneticola trilobata</i> (L.) Pruski</a></td>
+            <td>Asteraceae</td>
+          </tr>
+                      <tr>
+            <td>White Sweetclover</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mzc="><i>Melilotus albus</i> Medik.</a></td>
+            <td>Leguminosae</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Search Functionality
+    document.getElementById("searchBtn").addEventListener("click", function () {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#weedTable tr");
+
+      rows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        if (rowText.includes(input)) {
+          row.classList.remove("hidden");
+        } else {
+          row.classList.add("hidden");
+        }
+      });
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 <a href="https://www.example.com">Rifat Hasan Rabbi</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
