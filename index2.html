@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@200;300;400;500;600;700&display=swap">
+  <style>
+    body {
+      font-family: 'Bai Jamjuree', sans-serif;
+      background-color: #f8fafc;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5px;
+    }
+
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin-bottom: 24px;
+      text-align: center;
+      color: #1E40AF;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
+    }
+
+    nav ul li {
+      margin: 0 8px;
+    }
+
+    nav ul li a {
+      background-color: #1E40AF;
+      color: white;
+      border-radius: 8px;
+      padding: 8px 16px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    nav ul li a:hover {
+      background-color: #1c3d9a;
+    }
+
+    .search-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .search-container input {
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      padding: 12px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 8px;
+      font-size: 16px;
+    }
+
+    .search-container button {
+      background-color: #1E40AF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 24px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-container button:hover {
+      background-color: #1c3d9a;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 24px;
+    }
+
+    table, th, td {
+      border: 1px solid #d1d5db;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f3f4f6;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .highlight {
+      background-color: yellow;
+    }
+
+    footer {
+      margin-top: 24px;
+      padding: 16px;
+      background-color: #e5e7eb;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      font-family: 'Bai Jamjuree', sans-serif;
+    }
+
+    footer a {
+      color: #1E40AF;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: row;
+      }
+
+      nav ul li {
+        margin: 8px 0;
+      }
+
+      .search-container input, .search-container button {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weed Herbarium</h1>
+    </header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/index1 copy.html">Home</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="/contact.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="search-container">
+      <input id="searchInput" type="text" placeholder="Search here">
+      <button id="searchBtn">Search</button>
+    </div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Local Name</th>
+            <th>Scientific Name</th>
+            <th>Family Name</th>
+          </tr>
+        </thead>
+        <tbody id="weedTable">
+          <tr>
+            <td>Vatshola</td>
+            <td><a href="https://www.weedherb-bau.com/weed/OQ=="><i>Aeschynomene aspera</i> L.</a></td>
+            <td>Fabaceae</td>
+          </tr>
+          <tr>
+            <td>Wedelia</td>
+            <td><a href="https://www.weedherb-bau.com/weed/MjY="><i>Sphagneticola trilobata</i> (L.) Pruski</a></td>
+            <td>Asteraceae</td>
+          </tr>
+          <tr>
+            <td>White Sweetclover</td>
+            <td><a href="https://www.weedherb-bau.com/weed/Mzc="><i>Melilotus albus</i> Medik.</a></td>
+            <td>Leguminosae</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    // Search Functionality
+    function performSearch() {
+      const input = document.getElementById("searchInput").value.toLowerCase();
+      const rows = document.querySelectorAll("#weedTable tr");
+
+      rows.forEach(row => {
+        const cells = row.querySelectorAll("td");
+        let rowContainsSearchTerm = false;
+
+        cells.forEach(cell => {
+          const cellText = cell.textContent.toLowerCase();
+          if (cellText.includes(input)) {
+            rowContainsSearchTerm = true;
+            cell.classList.add("highlight");
+          } else {
+            cell.classList.remove("highlight");
+          }
+        });
+
+        if (rowContainsSearchTerm) {
+          row.classList.remove("hidden");
+        } else {
+          row.classList.add("hidden");
+        }
+      });
+    }
+
+    document.getElementById("searchBtn").addEventListener("click", performSearch);
+    document.getElementById("searchInput").addEventListener("keypress", function (e) {
+      if (e.key === "Enter") {
+        performSearch();
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 <a href="https://www.example.com">Rifat Hasan Rabbi</a>. All rights reserved.</p>
+  </footer>
+</body>
+</html>
